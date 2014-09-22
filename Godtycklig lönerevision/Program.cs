@@ -10,80 +10,64 @@ namespace Godtycklig_lönerevision
     {
         static void Main(string[] args)
         {
-
+            ReadInt("hej");
 
 
         }
         
         static int ReadInt(string prompt)
         {
-            int total1 = 0;
-            int total2 = 0;
+            int ReadInt = 0;
+            string input = "";
 
-            while (true)
-            {
-                try
-                {   
-                    
-                    //Försöker översätta inmatat värde till en int-variabel.
-                    Console.Write("Ange antal löner att mata in:");
-                    total1 = int.Parse(Console.ReadLine());
-
-                    break;
-
-                }
-
-
-                catch( FormatException )
-                {   
-                    
-                    //Ifall det inte fungerade så kommer detta att köras istället.
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nFEL! Det du angivet är felaktigt.");
-                    Console.ResetColor();
-                }
-
-            for (int i=0; i<1000; i++ )
-            {
-
-
-            }
-
-
-              while (true)
+                while (true)
                 {
-                
-                  try
-                    {   
-                      
-                      
-                    //Försöker översätta inmatat värde till en int-variabel.
-                    Console.Write("Ange lön nummer 1:");
-                    total2 = int.Parse(Console.ReadLine());
 
-                    break;
+                    try
+                    {
+
+                        //Översätter inmatat värde till en int-variabel.
+                        Console.Write("Ange antal löner att mata in:");
+                        ReadInt = int.Parse(Console.ReadLine());
+
+                        //If-satsen kontrollerar att summan som matas in är högre än noll.
+                        if (ReadInt < 1)
+                        {
+                            Console.WriteLine("Du måste ange ett höre tal än 0.");
+                        }
+
+                        else
+                        {
+
+                            break;
+                        }
+
 
                     }
 
 
-                catch( FormatException )
-                {   
-                    
-                    //Ifall det inte fungerade så kommer detta att köras istället.
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nFEL! Det du angivet är felaktigt.");
-                    Console.ResetColor();
+                    catch
+                    {
+
+                        //Ifall det inte fungerade så kommer detta att köras istället.
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.WriteLine("FEL! {0} Det du angivet är felaktigt.", input);
+                        Console.ResetColor();
+                    }
+
+                        
                 }
             
+                    
             
-            
-            
-            
-            
-            
-            }
+                for(int i=0; i<ReadInt; i++) 
+                {
+                    Console.WriteLine("Ange lön nummer {0}:", i);
 
-            
+                }
+
+                return ReadInt;
+
         }
 
 
@@ -92,5 +76,5 @@ namespace Godtycklig_lönerevision
 }
 
 
-    }
-}
+     
+

@@ -1,2 +1,6 @@
 C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\Godtycklig lönerevision\bin\Debug\Godtycklig lönerevision.exe.config
 C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\Godtycklig lönerevision\obj\Debug\Godtycklig lönerevision.csprojResolveAssemblyReference.cache
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\Godtycklig lönerevision\bin\Debug\Godtycklig lönerevision.exe
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\Godtycklig lönerevision\bin\Debug\Godtycklig lönerevision.pdb
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\Godtycklig lönerevision\obj\Debug\Godtycklig lönerevision.exe
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\Godtycklig lönerevision\obj\Debug\Godtycklig lönerevision.pdb
