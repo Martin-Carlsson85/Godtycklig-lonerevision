@@ -10,6 +10,14 @@ namespace Godtycklig_lönerevision
     {
         static void Main(string[] args)
         {
+
+
+
+        }
+        static int ReadInt()
+        {
+
+            return 8;
         }
     }
 }
