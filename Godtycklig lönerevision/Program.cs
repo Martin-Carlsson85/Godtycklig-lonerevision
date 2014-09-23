@@ -14,9 +14,21 @@ namespace Godtycklig_lönerevision
             
             ReadInt("hej");
 
-            do
+            while (numberOfSalaries < 2)
             {
+                numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
 
+                if (numberOfSalaries < 2)
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Du måste mata in minst två löner för att kunna göra en beräkning!");
+                    Console.ResetColor();
+                }
+
+                else
+                {
+                    break;
+                }
 
 
             }
