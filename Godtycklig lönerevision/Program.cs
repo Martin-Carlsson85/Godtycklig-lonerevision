@@ -10,7 +10,31 @@ namespace Godtycklig_lönerevision
     {
         static void Main(string[] args)
         {
+            int numberOfSalaries = 0;
+            
             ReadInt("hej");
+
+            do
+            {
+
+
+
+            }
+        }
+
+
+        static void ProcessSalaries(int count)
+        {
+            
+            int countSalaries;
+            int totalSalary;
+            int medianSalary;
+            int averageSalary;
+            int maxSalary;
+            int minSalary;
+
+            int[] salaries = new int[0];
+            int[] salariesSorted = new int[0];
 
 
         }
