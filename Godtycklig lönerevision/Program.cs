@@ -10,10 +10,9 @@ namespace Godtycklig_lönerevision
     {
         static void Main(string[] args)
         {
+            bool exit = false;
             int numberOfSalaries = 0;
-            
-            ReadInt("hej");
-
+           
             while (numberOfSalaries < 2)
             {
                 numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
@@ -32,6 +31,26 @@ namespace Godtycklig_lönerevision
 
 
             }
+
+            ProcessSalaries(numberOfSalaries);
+
+            Console.WriteLine();
+
+            Console.BackgroundColor = Console.Green;
+            Console.WriteLine("Tryck tangent för ny beräkning - Escape avslutar.");
+            Console.ResetColor();
+
+            ConsoleKeyInfo cki;
+            cki = Console.ReadKey(true);
+
+                if (cki.Key == ConsoleKey.Escape)
+                {
+                    return;
+                }
+
+                numberOfSalaries = 0;
+
+                while (!exit) ;
         }
 
 
@@ -44,6 +63,7 @@ namespace Godtycklig_lönerevision
             int averageSalary;
             int maxSalary;
             int minSalary;
+            int salarySpred = 0;
 
             int[] salaries = new int[0];
             int[] salariesSorted = new int[0];
