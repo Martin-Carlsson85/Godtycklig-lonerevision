@@ -13,13 +13,15 @@ namespace Godtycklig_lönerevision
            
             int numberOfSalaries = 0;
            
-           
+            //Do-while-loop som kontrollerar så att användaren inte skriver in färre än 2 löner.
             do
             {
                 while (numberOfSalaries < 2)
                 {
+                    //Skickar anrop till metoden ReadInt tillsammans med argument.
                     numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
 
+                    //Här får användaren felmeddelande om han/hon angett färre än två löner.
                     if (numberOfSalaries < 2)
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
@@ -34,12 +36,12 @@ namespace Godtycklig_lönerevision
 
                 }
 
-
+                //Skickar anrop till metoden ProcessSalaries tillsammans med argument.
                 ProcessSalaries(numberOfSalaries);
 
                 Console.WriteLine();
 
-                Console.BackgroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Tryck tangent för ny beräkning - Escape avslutar.");
                 Console.ResetColor();
 
@@ -63,6 +65,7 @@ namespace Godtycklig_lönerevision
             int[] salaries = new int[count];
             int[] salariesSorted = new int[count];
 
+            //Här loopas arrayen och metoden ReadInt körs.
             for (int i = 0; i < count; i++) 
             {
                 salaries[i] = ReadInt(String.Format("Ange lön nummer {0}: ", i + 1));
@@ -73,6 +76,7 @@ namespace Godtycklig_lönerevision
 
             }
 
+            //Här sorteras arrayen. 
             Array.Sort(salariesSorted);
 
             maxSalary = salariesSorted.Max();
@@ -82,6 +86,7 @@ namespace Godtycklig_lönerevision
 
             countSalaries = salariesSorted.Count();
 
+            //Här räknas medianen ut.
             int l = salariesSorted.Count() / 2;
 
             if (countSalaries % 2 == 0)
@@ -102,8 +107,11 @@ namespace Godtycklig_lönerevision
             Console.WriteLine("----------------------------------");
             Console.WriteLine();
 
+            //Här listas lönerna med tre löner i varje lista.
             for (int i = 1; i <= count; i++)
             {
+             
+                //Här ljusteras utskriften av lönerna så att de hamnar snyggt.
                 Console.Write("{0,5}   ", salaries[i - 1]);
 
                 if (i % 3 == 0)
@@ -160,11 +168,7 @@ namespace Godtycklig_lönerevision
                         
                 }
             
-                    
-            
-                
-
-                return ReadInt;
+                    return ReadInt;
 
         }
 
