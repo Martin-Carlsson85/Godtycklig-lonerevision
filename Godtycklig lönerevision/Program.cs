@@ -36,7 +36,7 @@ namespace Godtycklig_lönerevision
 
             Console.WriteLine();
 
-            Console.BackgroundColor = Console.Green;
+            Console.BackgroundColor = ConsoleColor.Green;
             Console.WriteLine("Tryck tangent för ny beräkning - Escape avslutar.");
             Console.ResetColor();
 
@@ -107,6 +107,18 @@ namespace Godtycklig_lönerevision
             Console.WriteLine("----------------------------------");
             Console.WriteLine();
 
+            for (int i = 1; i <= count; i++)
+            {
+                Console.Write("{0,5}    ", salaries[i - 1]);
+
+                if (i % 3 == 0)
+                {
+                    Console.WriteLine();
+                }
+
+            }
+
+
         }
         
         static int ReadInt(string prompt)
@@ -121,8 +133,9 @@ namespace Godtycklig_lönerevision
                     {
 
                         //Översätter inmatat värde till en int-variabel.
-                        Console.Write("Ange antal löner att mata in:");
-                        ReadInt = int.Parse(Console.ReadLine());
+                        Console.Write(prompt);
+                        input = Console.ReadLine();
+                        ReadInt = int.Parse(input);
 
                         //If-satsen kontrollerar att summan som matas in är högre än noll.
                         if (ReadInt < 1)
@@ -154,11 +167,7 @@ namespace Godtycklig_lönerevision
             
                     
             
-                for(int i=0; i<ReadInt; i++) 
-                {
-                    Console.WriteLine("Ange lön nummer {0}:", i);
-
-                }
+                
 
                 return ReadInt;
 
