@@ -87,7 +87,25 @@ namespace Godtycklig_lönerevision
 
             countSalaries = salariesSorted.Count();
 
+            int l = salariesSorted.Count() / 2;
 
+            if (countSalaries % 2 == 0)
+            {
+                medianSalary = (salariesSorted[l - 1] + salariesSorted[l]) / 2;
+            }
+
+            else
+            {
+                medianSalary = salariesSorted[l];
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine("Medianlön:               {0:c0}", medianSalary);
+            Console.WriteLine("Medellön:                {0:c0}", averageSalary);
+            Console.WriteLine("Lönespridning:           {0:c0}", salarySpred);
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine();
 
         }
         
