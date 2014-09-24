@@ -10,47 +10,42 @@ namespace Godtycklig_lönerevision
     {
         static void Main(string[] args)
         {
-            bool exit = false;
+           
             int numberOfSalaries = 0;
            
-            while (numberOfSalaries < 2)
+           
+            do
             {
-                numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
-
-                if (numberOfSalaries < 2)
+                while (numberOfSalaries < 2)
                 {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Du måste mata in minst två löner för att kunna göra en beräkning!");
-                    Console.ResetColor();
+                    numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
+
+                    if (numberOfSalaries < 2)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Du måste mata in minst två löner för att kunna göra en beräkning!");
+                        Console.ResetColor();
+                    }
+
+                    else
+                    {
+                        break;
+                    }
+
                 }
 
-                else
-                {
-                    break;
-                }
 
+                ProcessSalaries(numberOfSalaries);
 
-            }
+                Console.WriteLine();
 
-            ProcessSalaries(numberOfSalaries);
-
-            Console.WriteLine();
-
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.WriteLine("Tryck tangent för ny beräkning - Escape avslutar.");
-            Console.ResetColor();
-
-            ConsoleKeyInfo cki;
-            cki = Console.ReadKey(true);
-
-                if (cki.Key == ConsoleKey.Escape)
-                {
-                    return;
-                }
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.WriteLine("Tryck tangent för ny beräkning - Escape avslutar.");
+                Console.ResetColor();
 
                 numberOfSalaries = 0;
 
-                while (!exit) ;
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
 
@@ -109,7 +104,7 @@ namespace Godtycklig_lönerevision
 
             for (int i = 1; i <= count; i++)
             {
-                Console.Write("{0,5}    ", salaries[i - 1]);
+                Console.Write("{0,5}   ", salaries[i - 1]);
 
                 if (i % 3 == 0)
                 {
