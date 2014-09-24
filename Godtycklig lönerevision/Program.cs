@@ -57,16 +57,36 @@ namespace Godtycklig_lönerevision
         static void ProcessSalaries(int count)
         {
             
-            int countSalaries;
-            int totalSalary;
-            int medianSalary;
-            int averageSalary;
-            int maxSalary;
-            int minSalary;
+            int countSalaries = 0;
+            int totalSalary = 0;
+            int medianSalary = 0;
+            int averageSalary = 0;
+            int maxSalary = 0;
+            int minSalary = 0;
             int salarySpred = 0;
 
-            int[] salaries = new int[0];
-            int[] salariesSorted = new int[0];
+            int[] salaries = new int[count];
+            int[] salariesSorted = new int[count];
+
+            for (int i = 0; i < count; i++) 
+            {
+                salaries[i] = ReadInt(String.Format("Ange lön nummer {0}: ", i + 1));
+
+                totalSalary += salaries[i];
+
+                salariesSorted[i] = salaries[i];
+
+            }
+
+            Array.Sort(salariesSorted);
+
+            maxSalary = salariesSorted.Max();
+            minSalary = salariesSorted.Min();
+            salarySpred = maxSalary - minSalary;
+            averageSalary = totalSalary / count;
+
+            countSalaries = salariesSorted.Count();
+
 
 
         }
