@@ -10,54 +10,40 @@ namespace Godtycklig_lönerevision
     {
         static void Main(string[] args)
         {
-           
-            int numberOfSalaries = 0;
-           
+            int numberOfSalaries;
+
             //Do-while-loop som kontrollerar så att användaren inte skriver in färre än 2 löner.
             do
             {
-                while (numberOfSalaries < 2)
+                //Skickar anrop till metoden ReadInt tillsammans med argument.
+                numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
+
+                //Här får användaren felmeddelande om han/hon angett färre än två löner.
+                if (numberOfSalaries < 2)
                 {
-                    //Skickar anrop till metoden ReadInt tillsammans med argument.
-                    numberOfSalaries = ReadInt("Ange antal löner att mata in: ");
-
-                    //Här får användaren felmeddelande om han/hon angett färre än två löner.
-                    if (numberOfSalaries < 2)
-                    {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Du måste mata in minst två löner för att kunna göra en beräkning!");
-                        Console.ResetColor();
-                    }
-
-                    else
-                    {
-                        break;
-                    }
-
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Du måste mata in minst två löner för att kunna göra en beräkning!");
+                    Console.ResetColor();
                 }
+                else
+                {
+                    //Skickar anrop till metoden ProcessSalaries tillsammans med argument.
+                    ProcessSalaries(numberOfSalaries);
 
-                //Skickar anrop till metoden ProcessSalaries tillsammans med argument.
-                ProcessSalaries(numberOfSalaries);
-
-                Console.WriteLine();
+                    Console.WriteLine();
+                }
 
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Tryck tangent för ny beräkning - Escape avslutar.");
                 Console.ResetColor();
-
-                numberOfSalaries = 0;
-
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
 
         static void ProcessSalaries(int count)
         {
-            
             int countSalaries = 0;
-            int totalSalary = 0;
             int medianSalary = 0;
-            int averageSalary = 0;
             int maxSalary = 0;
             int minSalary = 0;
             int salarySpred = 0;
@@ -66,14 +52,11 @@ namespace Godtycklig_lönerevision
             int[] salariesSorted = new int[count];
 
             //Här loopas arrayen och metoden ReadInt körs.
-            for (int i = 0; i < count; i++) 
+            for (int i = 0; i < count; i++)
             {
                 salaries[i] = ReadInt(String.Format("Ange lön nummer {0}: ", i + 1));
 
-                totalSalary += salaries[i];
-
                 salariesSorted[i] = salaries[i];
-
             }
 
             //Här sorteras arrayen. 
@@ -82,7 +65,6 @@ namespace Godtycklig_lönerevision
             maxSalary = salariesSorted.Max();
             minSalary = salariesSorted.Min();
             salarySpred = maxSalary - minSalary;
-            averageSalary = totalSalary / count;
 
             countSalaries = salariesSorted.Count();
 
@@ -93,7 +75,6 @@ namespace Godtycklig_lönerevision
             {
                 medianSalary = (salariesSorted[l - 1] + salariesSorted[l]) / 2;
             }
-
             else
             {
                 medianSalary = salariesSorted[l];
@@ -102,7 +83,7 @@ namespace Godtycklig_lönerevision
             Console.WriteLine();
             Console.WriteLine("----------------------------------");
             Console.WriteLine("Medianlön:               {0:c0}", medianSalary);
-            Console.WriteLine("Medellön:                {0:c0}", averageSalary);
+            Console.WriteLine("Medellön:                {0:c0}", salaries.Average());
             Console.WriteLine("Lönespridning:           {0:c0}", salarySpred);
             Console.WriteLine("----------------------------------");
             Console.WriteLine();
@@ -110,7 +91,6 @@ namespace Godtycklig_lönerevision
             //Här listas lönerna med tre löner i varje lista.
             for (int i = 1; i <= count; i++)
             {
-             
                 //Här ljusteras utskriften av lönerna så att de hamnar snyggt.
                 Console.Write("{0,5}   ", salaries[i - 1]);
 
@@ -118,65 +98,47 @@ namespace Godtycklig_lönerevision
                 {
                     Console.WriteLine();
                 }
-
             }
-
-
         }
-        
+
         static int ReadInt(string prompt)
         {
-            int ReadInt = 0;
-            string input = "";
+            int readInt;
+            string input = null;
 
-                while (true)
+            while (true)
+            {
+                try
                 {
+                    //Översätter inmatat värde till en int-variabel.
+                    Console.Write(prompt);
+                    input = Console.ReadLine();
+                    readInt = int.Parse(input);
 
-                    try
+                    //If-satsen kontrollerar att summan som matas in är högre än noll.
+                    if (readInt < 1)
                     {
-
-                        //Översätter inmatat värde till en int-variabel.
-                        Console.Write(prompt);
-                        input = Console.ReadLine();
-                        ReadInt = int.Parse(input);
-
-                        //If-satsen kontrollerar att summan som matas in är högre än noll.
-                        if (ReadInt < 1)
-                        {
-                            Console.WriteLine("Du måste ange ett höre tal än 0.");
-                        }
-
-                        else
-                        {
-
-                            break;
-                        }
-
-
+                        Console.WriteLine("Du måste ange ett höre tal än 0.");
                     }
-
-
-                    catch
+                    else
                     {
-
-                        //Ifall det inte fungerade så kommer detta att köras istället.
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.WriteLine("FEL! {0} Det du angivet är felaktigt.", input);
-                        Console.ResetColor();
+                        break;
                     }
-
-                        
                 }
-            
-                    return ReadInt;
+                catch
+                {
+                    //Ifall det inte fungerade så kommer detta att köras istället.
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("FEL! {0} Det du angivet är felaktigt.", input);
+                    Console.ResetColor();
+                }
+            }
 
+            return readInt;
         }
-
-
-
     }
 }
 
 
-     
+
 

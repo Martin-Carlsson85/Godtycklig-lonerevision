@@ -1,0 +1,6 @@
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\mc22dg\Documents\1dv402-mc22dg-1-3-godtycklig-lonerevision\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
